@@ -3,11 +3,12 @@ var Engine = Matter.Engine,
   Events = Matter.Events,
   Bodies = Matter.Bodies;
  
-var particles = [];
+var particle = [];
 var plinkos = [];
 var divisions =[];
 var divisionHeight=300;
 var score =0;
+var particles1;
 function setup() {
   createCanvas(800, 800);
   engine = Engine.create();
@@ -18,29 +19,33 @@ function setup() {
   for (var k = 0; k <=80; k = k + 80) {
     divisions.push(new Divisions(k, height-divisionHeight/2, 10, divisionHeight));
   }
+  for (var k = 80; k <=240; k = k + 80) {
+    divisions.push(new Divisions(k, height-divisionHeight/2, 10, divisionHeight));
+  }
+  for (var k = 240; k <=400; k = k + 80) {
+    divisions.push(new Divisions(k, height-divisionHeight/2, 10, divisionHeight));
+  }
+  for (var k = 400; k <=560; k = k + 80) {
+    divisions.push(new Divisions(k, height-divisionHeight/2, 10, divisionHeight));
+  }
+  for (var k = 560; k <=720; k = k + 80) {
+    divisions.push(new Divisions(k, height-divisionHeight/2, 10, divisionHeight));
+  }
 
   //create 1st row of plinko objects
+ 
   for (var j = 50; j <=width; j=j+50) { 
-    plinkos.push(new Plinko(j,225));}
-  for (var j = 50; j <=width; j=j+50) { 
-    plinkos.push(new Plinko(j,200));
+    plinkos.push(new Plinko(j,75));
   }
   for (var j = 50; j <=width; j=j+50) { 
     plinkos.push(new Plinko(j,175));
   }
   for (var j = 50; j <=width; j=j+50) { 
-    plinkos.push(new Plinko(j,150));
+    plinkos.push(new Plinko(j,275));
   }
   for (var j = 50; j <=width; j=j+50) { 
-    plinkos.push(new Plinko(j,125));
+    plinkos.push(new Plinko(j,375));
   }
-  for (var j = 50; j <=width; j=j+50) { 
-    plinkos.push(new Plinko(j,100));
-  }
-  for (var j = 50; j <=width; j=j+50) { 
-    plinkos.push(new Plinko(j,75));
-  }
-
   //create 2nd row of plinko objects
  
 
@@ -72,6 +77,11 @@ function draw() {
   //display the divisions
   for (var k = 0; k < divisions.length; k++) {
     divisions[k].display();
+  }
+
+  if(frameCount%60===0){
+    particles1.push(new particle(random(width/2-10,width/2+10),10,10));
+      
   }
 
   //display the paricles 
