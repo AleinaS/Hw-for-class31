@@ -20,15 +20,29 @@ function setup() {
   }
 
   //create 1st row of plinko objects
-  for (var j = 75; j <=width; j=j+50) { 
+  for (var j = 50; j <=width; j=j+50) { 
+    plinkos.push(new Plinko(j,225));}
+  for (var j = 50; j <=width; j=j+50) { 
+    plinkos.push(new Plinko(j,200));
+  }
+  for (var j = 50; j <=width; j=j+50) { 
+    plinkos.push(new Plinko(j,175));
+  }
+  for (var j = 50; j <=width; j=j+50) { 
+    plinkos.push(new Plinko(j,150));
+  }
+  for (var j = 50; j <=width; j=j+50) { 
+    plinkos.push(new Plinko(j,125));
+  }
+  for (var j = 50; j <=width; j=j+50) { 
+    plinkos.push(new Plinko(j,100));
+  }
+  for (var j = 50; j <=width; j=j+50) { 
     plinkos.push(new Plinko(j,75));
   }
 
   //create 2nd row of plinko objects
-  for (var j = 50; j <=width-10; j=j+50) 
-  {
-    plinkos.push(new Plinko(j,175));
-  }
+ 
 
   //create 3rd row of plinko objects
 
